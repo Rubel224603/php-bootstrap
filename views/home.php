@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.css">   
-</head>
-<body>
-    <nav class="navbar navbar-expand bg-dark navbar-dark">
-        <div class="container">
-            <a href="#" class="navbar-brand">My Portfolio</a>
-            <ul class="navbar-nav mx-auto">
-                <li><a href=""class="nav-link">Home</a></li>
-                <li><a href="" class="nav-link">About</a></li>
-                <li><a href="" class="nav-link">Contact</a></li>
-                <li><a href="" class="nav-link">Portfolio</a></li>
-                <li><a href=""  class="nav-link">Gallary</a></li>
-                <li><a href="" class="nav-link">Gallary</a></li>
-            </ul>
-            <ul class="navbar-nav">
-                <li><a href="" class="nav-link">Login</a> </li>
-                <li><a href="" class="nav-link">Sign Up</a> </li>
-            </ul>
 
-        </div>
 
-           
-    </nav>
+<?php
+
+    include "includes/header.php";
+?>
 
 
     <div id="slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1800">
@@ -73,42 +50,29 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/img/s6.png" alt="">
-                        <div class="card-body">
-                            <h4>This is Heading Content</h4>
-                            <p>Lorem ipsum is the best </p>
-                            <a href="" class="btn btn-dark">Read more</a>
+                <?php foreach($blogs as $blog) { ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="<?php echo $blog['image']; ?>" alt="" height="270">
+                            <div class="card-body">
+                                <h4><?php echo $blog['title']?></h4>
+                                <p><?php $blog['decription_one']?> </p>
+                                <a href="" class="btn btn-dark">Read more</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/img/s6.png" alt="">
-                        <div class="card-body">
-                            <h4>This is Heading Content</h4>
-                            <p>Lorem ipsum is the best </p>
-                            <a href="" class="btn btn-dark">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="assets/img/s6.png" alt="">
-                        <div class="card-body">
-                            <h4>This is Heading Content</h4>
-                            <p>Lorem ipsum is the best </p>
-                            <a href="" class="btn btn-dark">Read more</a>
-                        </div>
-                    </div>
-                </div>
+
+                <?php } ?>
             </div>
 
 
         </div>
     </section>>
 
-    <script src="assets/js/bootstrap.bundle.js"></script>
-</body>
-</html>
+
+
+<?php
+
+include "includes/footer.php";
+?>
+
