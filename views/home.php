@@ -55,9 +55,14 @@
                         <div class="card">
                             <img src="<?php echo $blog['image']; ?>" alt="" height="270">
                             <div class="card-body">
+
                                 <h4><?php echo $blog['title']?></h4>
-                                <p><?php $blog['decription_one']?> </p>
-                                <a href="" class="btn btn-dark">Read more</a>
+
+                                <p><?php echo $blog['decription_one']?></p>
+
+                                <p><?php $blog['description_two']?> </p>
+
+                                <a href="web.php?page=readmore&&id=<?php echo $blog['id']?>" class="btn btn-dark">Read more</a>
                             </div>
                         </div>
                     </div>

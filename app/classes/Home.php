@@ -6,6 +6,15 @@ use App\classes\Blog;
 class Home {
 
     public $blogs;
+    public $firstName   = "Rubel";
+    public $blog;
+   // public static $city = "Dhaka";
+
+//    public static function manage(){
+//        echo "Manage";
+//
+//    }
+
     public function index()
     {
         $this->blogs = Blog::getAllBlog();
@@ -30,6 +39,12 @@ class Home {
 
     public function  service(){
         return view('service');
+    }
+    public function readmore($id){
+
+        $this->blog= Blog::getBlogId($id);
+        //return view("readmore");
+        return view("readmore",['blog'=>$this->blog]);
     }
 }
 
