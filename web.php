@@ -2,6 +2,9 @@
     require_once "vendor/autoload.php";
     use App\classes\Home;
     use App\classes\FullName;
+    use App\classes\calculator;
+    use App\classes\Series;
+
 
 
     $home = new Home();
@@ -48,11 +51,23 @@
 
 
 
-    elseif($_POST['full_name_btn']){
+    elseif(isset($_POST['full_name_btn'])){
 
         $fullName = new FullName($_POST);
 
         $fullName->index();
+
+    }
+    elseif(isset($_POST['calculator_btn'])){
+
+        $calculator = new calculator($_POST);
+
+        $calculator->index();
+    }
+    elseif(isset($_POST['series_btn'])){
+        $series = new Series($_POST);
+        $series->index();
+
     }
 
 
